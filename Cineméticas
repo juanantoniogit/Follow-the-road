@@ -1,0 +1,73 @@
+Cineméticas
+var PavionX
+var PavionY
+var velo
+# var b = "textvar"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	set_fixed_process(true)
+	print("esto arranca")
+	pass
+	
+func _fixed_process(delta):
+	posi()
+	pantallika()
+	tiempiko(delta)
+	#TouchScreenButton.
+	var t1
+	t1 = get_process_delta_time()
+	#print ("los segundos en fixe:")
+	#print(t1)
+	#print ("los egundooooossssssa")
+	print(t1)
+	print(delta)
+	print(delta)
+	print(delta)
+	print(delta)
+	print(delta)
+	print(delta)
+	print(delta)
+	print(delta)
+	print(delta)
+	
+	#print(OS.get_ticks_msec())
+	#print("los egundooooossssssa")
+	#print(get_viewport().get_mouse_pos())
+	pass
+	
+	
+func tiempiko(tttt):
+	#print ("el timepo es:")
+	var tt2
+	tt2=tttt
+	#print(tt2)
+	#print ("los segundos en la funcion tiempik")
+	#print(get_process_delta_time())
+	#print("segundos")
+	
+	
+	
+func pantallika():
+	var pantalla = get_node("posiciony")
+	pantalla.set_text("posicion y: " + str(PavionY))
+
+
+func ratonciko():
+	print("Hola")
+	
+
+func posi():
+	var rigi = get_node("RigidBody2D")
+	var rijiPO
+	var gggX = 0.00
+	var gggY = 0.00
+	var ggg = Vector2(gggX,gggY)
+	rijiPO = rigi.get_pos()
+	ggg = rigi.get_pos()
+	if ggg.y > 150:
+		ggg.y=0
+		rigi.set_pos(ggg)
+	#print(ggg.y)
+	PavionY = ggg.y
